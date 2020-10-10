@@ -156,7 +156,7 @@ function Request() {
     event.preventDefault();
     // Create an instance of FileReader API
     let file_reader = new FileReader();
-    var today = new Date();
+    // var today = new Date();
     // Get the actual file itself
     let file = event.target.files[0];
     
