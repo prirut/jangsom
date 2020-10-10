@@ -317,7 +317,7 @@ function Request() {
                 <Grid containe justsify="center">
                   <Grid xs={9}>
                     <TextField
-                      name="Name"
+                      name="repair_user"
                       id="standard-basic"
                       label="ชื่อ-นามสกุล"
                       value={info.repair_user}
@@ -368,7 +368,7 @@ function Request() {
                       ชื่อแผนกที่แจ้งซ่อม
                     </InputLabel>
                     <Select
-                      name="RoomCode"
+                      name="department"
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={info.department}
@@ -406,7 +406,7 @@ function Request() {
                   ประเภทงาน
                 </InputLabel>
                 <Select
-                  name="work"
+                  name="com_problems_type"
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={info.com_problems_type}
@@ -471,8 +471,8 @@ function Request() {
                     <TextareaAutosize
                       rowsMin={3}
                       rowsMax={3}
-                      value={info.repair_}
-                      name="Discription"
+                      value={info.repair_detail}
+                      name="repair_detail"
                       aria-label="maximum height"
                       placeholder="อธิบายอาการเสีย"
                       defaultValue=""
