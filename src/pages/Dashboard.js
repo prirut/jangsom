@@ -515,7 +515,7 @@ function Dashboard() {
                   >
                     งานซ่อมทั้งหมด<br></br>
                     <span style={{ fontSize: "35px" }}>
-                      {CoutWorks(works).all_work}
+                      {CoutWorks(works).all_work!==0?CoutWorks(works).all_work:0}
                     </span>
                     <br></br>
                     งาน

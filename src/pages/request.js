@@ -311,7 +311,7 @@ function Request() {
 
               <form
                 className={classes.root}
-                autoComplete="off"
+                autoComplete="on"
                 onSubmit={handleSubmit}
               >
                 <Grid containe justsify="center">
@@ -338,22 +338,6 @@ function Request() {
                       }}
                     />
                   </Grid>
-                  {/* <Grid xs={9}>
-                    <TextField
-                      name="StudentId"
-                      id="standard-basic"
-                      variant="outlined"
-                      label="รหัสนักเรียน"
-                      value={info.studentId}
-                      onChange={handleChange}
-                      style={{
-                        fontFamily: "Kanit",
-                        textDecoration: "none",
-                        marginTop: "45px",
-                        borderColor: "yellow",
-                      }}
-                    />
-                  </Grid> */}
                 </Grid>
 
                 <Grid container>
