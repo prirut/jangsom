@@ -174,7 +174,7 @@ function Dashboard() {
   const [update, setUpdate] = React.useState({ Status: "", Discription: "" });
   const [loading, setLoading] = React.useState(false);
   const [IsDel, setIsDel] = React.useState(false);
-  const baseURL = "https://sws-mantainance.herokuapp.com";
+  const baseURL = "https://jkrjangsom.herokuapp.com";
   React.useEffect(() => {
     const fetchData = async () => {
       await axios(baseURL + "/api/get-allwork")

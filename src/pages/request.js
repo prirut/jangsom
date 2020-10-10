@@ -135,7 +135,7 @@ function Request() {
     Date: "",
   });
 
-  const baseURL = "https://sws-mantainance.herokuapp.com";
+  const baseURL = "https://jkrjangsom.herokuapp.com";
 
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
@@ -375,7 +375,7 @@ function Request() {
                       onChange={handleChange}
                     >
                       <MenuItem value={"OPD"}>OPD</MenuItem>
-                      <MenuItem value={"ER"}>OPD</MenuItem>
+                      <MenuItem value={"ER"}>ER</MenuItem>
                       <MenuItem value={"ห้องบัตร"}>ห้องบัตร</MenuItem>
                       <MenuItem value={"ห้องยา"}>ห้องยา</MenuItem>
                     </Select>
@@ -471,7 +471,7 @@ function Request() {
                     <TextareaAutosize
                       rowsMin={3}
                       rowsMax={3}
-                      value={info.repair_detail}
+                      value={info.repair_}
                       name="Discription"
                       aria-label="maximum height"
                       placeholder="อธิบายอาการเสีย"
