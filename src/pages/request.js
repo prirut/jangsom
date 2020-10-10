@@ -172,15 +172,17 @@ function Request() {
     event.preventDefault();
     // Create an instance of FileReader API
     let file_reader = new FileReader();
+    var today = new Date();
     // Get the actual file itself
     let file = event.target.files[0];
+    
     file_reader.onload = () => {
       // After uploading the file
       // appending the file to our state array
       // set the object keys and values accordingly
       setFiles([
         ...files,
-        { file_id: generateUUID(), uploaded_file: file_reader.result },
+        { file_id: repair_user+today, uploaded_file: file_reader.result },
       ]);
     };
     // reading the actual uploaded file
