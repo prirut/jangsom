@@ -171,7 +171,7 @@ function Dashboard() {
   const [IsUpdated, setIsUpdated] = React.useState(false);
   const [objId, setobjId] = React.useState("");
   const [refId, setRefId] = React.useState("");
-  const [update, setUpdate] = React.useState({ Status: "", Discription: "" });
+  const [update, setUpdate] = React.useState({ status_repair: "", repair_detail: "" });
   const [loading, setLoading] = React.useState(false);
   const [IsDel, setIsDel] = React.useState(false);
   const baseURL = "https://jkrjangsom.herokuapp.com";
@@ -761,9 +761,9 @@ function Dashboard() {
                                 />
                               )}
                               คำอธิบายการซ่อม : <br></br>
-                              {work[1].WorkInfo.repair_detail === ""
+                              {work[1].WorkInfo.repair_cause === ""
                                 ? "คลิกเพื่อออธิบายงานซ่อม"
-                                : work[1].WorkInfo.repair_detail}
+                                : work[1].WorkInfo.repair_cause}
                               <Button
                                 onClick={() => {
                                   handleOpen2(
@@ -926,7 +926,7 @@ function Dashboard() {
                     <TextareaAutosize
                       rowsMin={5}
                       columnMin={5}
-                      name="repair_detail"
+                      name="repair_cause"
                       aria-label="maximum height"
                       placeholder="อาการเสีย, วิธีการแก้ไข"
                       defaultValue=""
