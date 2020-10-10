@@ -793,8 +793,8 @@ function Dashboard() {
                                 confrimDel(
                               
                                   work[0],
-                                    work[1].WorkInfo.repair_user +
-                                    work[1].WorkInfo.department 
+                                  work[1].WorkInfo.repair_user +
+                                  work[1].WorkInfo.department 
                                      
                                 );
                               }}

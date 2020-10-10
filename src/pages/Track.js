@@ -322,7 +322,7 @@ function Track() {
                             color: "black",
                           }}
                         >
-                          อาการเสีย : {work.WorkInfo.reqair_detail}
+                          อาการเสีย : {work.WorkInfo.repair_detail}
                         </Typography>
                         <Typography
                           gutterBottom
