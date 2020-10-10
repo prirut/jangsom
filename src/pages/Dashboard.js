@@ -718,7 +718,7 @@ function Dashboard() {
                               variant="h8"
                               component="h4"
                               className={classes.text}
-                              style={status_color(work[1].WorkInfo.Status)}
+                              style={status_color(work[1].WorkInfo.status_repair)}
                             >
                               สถานะ : {work[1].WorkInfo.status_repair}
                               {loading && (
@@ -761,9 +761,9 @@ function Dashboard() {
                                 />
                               )}
                               คำอธิบายการซ่อม : <br></br>
-                              {work[1].WorkInfo.FixDetail === ""
+                              {work[1].WorkInfo.repair_detail === ""
                                 ? "คลิกเพื่อออธิบายงานซ่อม"
-                                : work[1].WorkInfo.FixDetail}
+                                : work[1].WorkInfo.repair_detail}
                               <Button
                                 onClick={() => {
                                   handleOpen2(
