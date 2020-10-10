@@ -280,7 +280,7 @@ function Track() {
                             color: "black",
                           }}
                         >
-                          ผู้เเจ้ง : {work.WorkInfo.Name}
+                          ผู้เเจ้ง : {work.WorkInfo.reqair_user}
                         </Typography>
 
                         <Typography
@@ -294,7 +294,7 @@ function Track() {
                             color: "black",
                           }}
                         >
-                          แผนกที่แจ้งซ่อม : {work.WorkInfo.RoomCode}
+                          แผนกที่แจ้งซ่อม : {work.WorkInfo.department}
                           {work.WorkInfo.RoomNumber}
                         </Typography>
 
@@ -309,7 +309,7 @@ function Track() {
                             color: "black",
                           }}
                         >
-                          ประเภทงานซ่อม : {work.WorkInfo.work}
+                          ประเภทงานซ่อม : {work.WorkInfo.com_problems_type}
                         </Typography>
                         <Typography
                           gutterBottom
@@ -322,7 +322,7 @@ function Track() {
                             color: "black",
                           }}
                         >
-                          อาการเสีย : {work.WorkInfo.Discription}
+                          อาการเสีย : {work.WorkInfo.reqair_detail}
                         </Typography>
                         <Typography
                           gutterBottom
@@ -342,9 +342,9 @@ function Track() {
                           variant="h8"
                           component="h4"
                           className={classes.text}
-                          style={status_color(work.WorkInfo.Status)}
+                          style={status_color(work.WorkInfo.status_repair)}
                         >
-                          สถานะ : {work.WorkInfo.Status}
+                          สถานะ : {work.WorkInfo.status_repair}
                         </Typography>
                         <Typography
                           gutterBottom
@@ -358,7 +358,7 @@ function Track() {
                           }}
                         >
                           คำอธิบายการซ่อม : <br></br>
-                          {work.WorkInfo.FixDetail}
+                          {work.WorkInfo.repair_cause}
                         </Typography>
                       </CardMedia>
                     </Card>

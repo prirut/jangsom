@@ -631,7 +631,7 @@ function Dashboard() {
                                 textDecoration: "none",
                               }}
                             >
-                              ผู้เเจ้ง : {work[1].WorkInfo.Name}
+                              ผู้เเจ้ง : {work[1].WorkInfo.repair_user}
                             </Typography>
                             <Typography className={classes.head}>
                               No.{idx + 1}
@@ -658,20 +658,7 @@ function Dashboard() {
                                 color: "black",
                               }}
                             >
-                              เลขประจำตัวนักเรียน : {work[1].WorkInfo.StudentId}
-                            </Typography>
-                            <Typography
-                              gutterBottom
-                              variant="h8"
-                              component="h4"
-                              className={classes.text}
-                              style={{
-                                fontFamily: "Kanit",
-                                textDecoration: "none",
-                                color: "black",
-                              }}
-                            >
-                              เลขห้องพัก : {work[1].WorkInfo.RoomCode}
+                              แผนก: {work[1].WorkInfo.department}
                               {work[1].WorkInfo.RoomNumber}
                             </Typography>
                             <Typography
@@ -698,7 +685,7 @@ function Dashboard() {
                                 color: "black",
                               }}
                             >
-                              ประเภทงานซ่อม : {work[1].WorkInfo.work}
+                              ประเภทงานซ่อม : {work[1].WorkInfo.com_problems_type}
                             </Typography>
                             <Typography
                               gutterBottom
@@ -711,7 +698,7 @@ function Dashboard() {
                                 color: "black",
                               }}
                             >
-                              อาการเสียที่แจ้ง : {work[1].WorkInfo.Discription}
+                              อาการเสียที่แจ้ง : {work[1].WorkInfo.repair_detail}
                             </Typography>
                             <Typography
                               gutterBottom
@@ -733,7 +720,7 @@ function Dashboard() {
                               className={classes.text}
                               style={status_color(work[1].WorkInfo.Status)}
                             >
-                              สถานะ : {work[1].WorkInfo.Status}
+                              สถานะ : {work[1].WorkInfo.status_repair}
                               {loading && (
                                 <CircularProgress
                                   size={24}
@@ -744,9 +731,9 @@ function Dashboard() {
                                 onClick={() => {
                                   handleOpen(
                                     work[0],
-                                    work[1].WorkInfo.RoomCode +
-                                      work[1].WorkInfo.RoomNumber +
-                                      work[1].WorkInfo.StudentId
+                                    work[1].WorkInfo.repair_user +
+                                    work[1].WorkInfo.department 
+                                     
                                   );
                                 }}
                               >
@@ -780,10 +767,11 @@ function Dashboard() {
                               <Button
                                 onClick={() => {
                                   handleOpen2(
+                                  
                                     work[0],
-                                    work[1].WorkInfo.RoomCode +
-                                      work[1].WorkInfo.RoomNumber +
-                                      work[1].WorkInfo.StudentId
+                                    work[1].WorkInfo.repair_user +
+                                    work[1].WorkInfo.department 
+                                   
                                   );
                                 }}
                               >
@@ -803,11 +791,11 @@ function Dashboard() {
                               }}
                               onClick={() => {
                                 confrimDel(
+                              
                                   work[0],
-
-                                  work[1].WorkInfo.RoomCode +
-                                    work[1].WorkInfo.RoomNumber +
-                                    work[1].WorkInfo.StudentId
+                                    work[1].WorkInfo.repair_user +
+                                    work[1].WorkInfo.department 
+                                     
                                 );
                               }}
                             >
@@ -868,7 +856,7 @@ function Dashboard() {
                       สถานะ
                     </InputLabel>
                     <Select
-                      name="Status"
+                      name="status_repair"
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       onChange={handleChangeStatus}
@@ -938,7 +926,7 @@ function Dashboard() {
                     <TextareaAutosize
                       rowsMin={5}
                       columnMin={5}
-                      name="Discription"
+                      name="repair_detail"
                       aria-label="maximum height"
                       placeholder="อาการเสีย, วิธีการแก้ไข"
                       defaultValue=""
