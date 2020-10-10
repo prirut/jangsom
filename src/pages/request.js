@@ -120,14 +120,13 @@ function Request() {
   const classes = useStyles();
 
   const [info, setInfo] = React.useState({
-    Name: "",
-    StudentId: "",
-    RoomCode: "",
-    RoomNumber: "",
-    work: "",
-    Discription: "",
-    Status: "รอดำเนินการ",
-    FixDetail: "",
+    repair_user: "",
+    department: "",
+    com_problems_type: "",
+    repair_list: "",
+    repair_detail: "",
+    status_repair: "รอดำเนินการ",
+    repair_cause: "",
   });
 
   const [works, setWorks] = React.useState({
@@ -218,7 +217,7 @@ function Request() {
       await axios
         .post(
           baseURL +
-            "/api/request-mantainance?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoi4Lie4Lix4LiX4LiY4LiZ4Lix4LiZ4LiX4LmMIOC4meC4uOC5iOC4oeC4nOC5iOC4reC4hyIsIlN0dWRlbnRJZCI6NjEzMDYwMn0.CYbnwnSMfSkZZj0HL-92_VByS2chxh55YHji_LQTwOI",
+          "/api/request-mantainance?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoi4Lie4Lix4LiX4LiY4LiZ4Lix4LiZ4LiX4LmMIOC4meC4uOC5iOC4oeC4nOC5iOC4reC4hyIsIlN0dWRlbnRJZCI6NjEzMDYwMn0.CYbnwnSMfSkZZj0HL-92_VByS2chxh55YHji_LQTwOI",
           works
         )
         .then(
@@ -321,7 +320,7 @@ function Request() {
                       name="Name"
                       id="standard-basic"
                       label="ชื่อ-นามสกุล"
-                      value={info.Name}
+                      value={info.repair_user}
                       variant="outlined"
                       className={classes.textbox}
                       onChange={handleChange}
@@ -372,7 +371,7 @@ function Request() {
                       name="RoomCode"
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
-                      value={info.RoomCode}
+                      value={info.department}
                       onChange={handleChange}
                     >
                       <MenuItem value={"OPD"}>OPD</MenuItem>
@@ -410,12 +409,20 @@ function Request() {
                   name="work"
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  value={info.work}
+                  value={info.com_problems_type}
                   onChange={handleChange}
                 >
-                  <MenuItem value={"ปัญหาโปรแกรม"}>ปัญหาโปรแกรม</MenuItem>
-                  <MenuItem value={"ปัญหา Hardware"}>ปัญหา Hardware</MenuItem>
-                  <MenuItem value={"เครือข่าย"}>เครือข่าย</MenuItem>
+                  <MenuItem value={"1"}>งานติดตั้งแก้ไขโปรแกรมต่างๆ	Software</MenuItem>
+                  <MenuItem value={"2"}>งานซ่อมแก้ไขปัญหาคอมพิวเตอร์	Hardware</MenuItem>
+                  <MenuItem value={"3"}>งานระบบเครือข่าย	Network</MenuItem>
+                  <MenuItem value={"4"}>งานแก้ไขปัญหา Internet ขัดข้อง	Internet</MenuItem>
+                  <MenuItem value={"5"}>งานติดตั้งคอมพิวเตอร์ใหม่</MenuItem>
+                  <MenuItem value={"6"}>งานซ่อมเครื่องปริ้นเตอร์</MenuItem>
+                  <MenuItem value={"7"}>งานซ่อมเครื่องสำรอง</MenuItem>
+                  <MenuItem value={"8"}>งานซ่อมอุปกรณ์ต่อพ่วง่(เม้าส์ คีย์บอร์ด อื่นๆ</MenuItem>
+                  <MenuItem value={"9"}>งานบริการอื่นๆ </MenuItem>
+
+
                 </Select>
 
                 <Typography
@@ -464,7 +471,7 @@ function Request() {
                     <TextareaAutosize
                       rowsMin={3}
                       rowsMax={3}
-                      value={info.Discription}
+                      value={info.repair_detail}
                       name="Discription"
                       aria-label="maximum height"
                       placeholder="อธิบายอาการเสีย"
@@ -508,10 +515,10 @@ function Request() {
           </Grid>
         </Card>
       ) : (
-        <FadeIn>
-          <Lottie options={defaultOptions2} height={140} width={140} />
-        </FadeIn>
-      )}
+          <FadeIn>
+            <Lottie options={defaultOptions2} height={140} width={140} />
+          </FadeIn>
+        )}
       <Footer />
     </div>
   );
