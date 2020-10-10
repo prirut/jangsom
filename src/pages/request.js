@@ -166,7 +166,7 @@ function Request() {
       // set the object keys and values accordingly
       setFiles([
         ...files,
-        { file_id: info.repair_user+today, uploaded_file: file_reader.result },
+        { file_id: info.repair_user, uploaded_file: file_reader.result },
       ]);
     };
     // reading the actual uploaded file
